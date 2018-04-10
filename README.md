@@ -1,4 +1,7 @@
 # treadmill
+
+[![Build Status](https://travis-ci.org/petvajda/treadmill.svg?branch=master)](https://travis-ci.org/petvajda/treadmill)
+
 Application to use during treadmill routine for music theory learning
 
 # Original email from Ant
