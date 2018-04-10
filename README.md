@@ -1,7 +1,9 @@
 # treadmill
 Application to use during treadmill routine for music theory learning
+
 # Original email from Ant
 
+```
 Treadmill routine:
 
 Index card with a scrambled order of keys and the numbers 1 thru 7 scramble on it.
@@ -21,3 +23,4 @@ These are the things that you’re saying and in this order.
 4.      The chord name and its notes
 
 5.      The pentatonic name and its notes
+```
