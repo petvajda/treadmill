@@ -5,7 +5,17 @@
 Music theory learning Application. You can use it to memorise scale notes and
 note positions on bass guitar. You may use it during your treadmill routine.
 
-The project also includes a basic solfège JavaScript library.
+The project also includes a basic Solfège JavaScript library:
+
+```
+> c = new Scale("C", 2)
+Scale {
+  base: 'C',
+  roman: 'II',
+  name: 'Dorian',
+  notes: [ 'D', 'E', 'F', 'G', 'A', 'B', 'C' ] }
+>
+```
 
 # Original email from Ant the idea for the Application
 
