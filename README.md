@@ -4,7 +4,9 @@
 
 Application to use during treadmill routine for music theory learning
 
-# Original email from Ant
+The project includes a basic solfège JavaScript library as well
+
+# Original email from Ant the idea for the Application
 
 ```
 Treadmill routine:
