@@ -2,9 +2,10 @@
 
 [![Build Status](https://travis-ci.org/petvajda/treadmill.svg?branch=master)](https://travis-ci.org/petvajda/treadmill)
 
-Application to use during treadmill routine for music theory learning
+Music theory learning Application. You can use it to memorise scale notes and
+note positions on bass guitar. You may use it during your treadmill routine.
 
-The project includes a basic solfège JavaScript library as well
+The project also includes a basic solfège JavaScript library.
 
 # Original email from Ant the idea for the Application
 
