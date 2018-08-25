@@ -10,9 +10,13 @@ const NAMES_MODES = [
 
 const CMajScale  = ["C",  "D",  "E",  "F",  "G",  "A",  "B" ];
 const flatKeys   = ["F",  "Bb", "Eb", "Ab", "Db", "Gb", "Cb"];
-const flatNotes  = ["B",  "E",  "A",  "D",  "G",  "C",  "F" ];
+// const flatNotes  = ["B",  "E",  "A",  "D",  "G",  "C",  "F" ];
+const flatNotes  = CMajScale.map(x =>
+									 CMajScale[(6+(3*CMajScale.indexOf(x)))%(CMajScale.length)]);
 const sharpKeys  = ["G",  "D",  "A",  "E",  "B",  "F#", "C#"];
-const sharpNotes = ["F",  "C",  "G",  "D",  "A",  "E",  "B" ];
+//const sharpNotes = ["F",  "C",  "G",  "D",  "A",  "E",  "B" ];
+const sharpNotes = CMajScale.map(x =>
+									 CMajScale[(3+(4*CMajScale.indexOf(x)))%(CMajScale.length)]);
 
 class Scale {
   constructor(base, mode) {
