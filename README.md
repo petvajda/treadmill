@@ -8,12 +8,12 @@ note positions on bass guitar. You may use it during your treadmill routine.
 The project also includes a basic Solfège JavaScript library:
 
 ```
-> c = new Scale("C", 2)
+> cdor = new Scale("Bb", 2)
 Scale {
-  base: 'C',
+  base: 'Bb',
   roman: 'II',
   name: 'Dorian',
-  notes: [ 'D', 'E', 'F', 'G', 'A', 'B', 'C' ] }
+  notes: [ 'C', 'D', 'Eb', 'F', 'G', 'A', 'Bb' ] }
 >
 ```
 
