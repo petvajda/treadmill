@@ -30,6 +30,16 @@ test('Db Major scale notes', () => {
   expect(dbmaj.notes).toEqual(["Db", "Eb", "F", "Gb", "Ab", "Bb", "C"]);
 });
 
+test('Gb Major scale notes', () => {
+  let gbmaj = new Scale("Gb", 1);
+  expect(gbmaj.notes).toEqual(["Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F"]);
+});
+
+test('Cb Major scale notes', () => {
+  let cbmaj = new Scale("Cb", 1);
+  expect(cbmaj.notes).toEqual(["Cb", "Db", "Eb", "Fb", "Gb", "Ab", "Bb"]);
+});
+
 test('G Major scale notes', () => {
   let gmaj = new Scale("G", 1);
   expect(gmaj.notes).toEqual(["G", "A", "B", "C", "D", "E", "F#"]);
@@ -45,6 +55,11 @@ test('A Major scale notes', () => {
   expect(amaj.notes).toEqual(["A", "B", "C#", "D", "E", "F#", "G#"]);
 });
 
+test('E Major scale notes', () => {
+  let emaj = new Scale("E", 1);
+  expect(emaj.notes).toEqual(["E", "F#", "G#", "A", "B", "C#", "D#"]);
+});
+
 test('B Major scale notes', () => {
   let bmaj = new Scale("B", 1);
   expect(bmaj.notes).toEqual(["B", "C#", "D#", "E", "F#", "G#", "A#"]);
@@ -53,4 +68,9 @@ test('B Major scale notes', () => {
 test('F# Major scale notes', () => {
   let fsmaj = new Scale("F#", 1);
   expect(fsmaj.notes).toEqual(["F#", "G#", "A#", "B", "C#", "D#", "E#"]);
+});
+
+test('C# Major scale notes', () => {
+  let csmaj = new Scale("C#", 1);
+  expect(csmaj.notes).toEqual(["C#", "D#", "E#", "F#", "G#", "A#", "B#"]);
 });
