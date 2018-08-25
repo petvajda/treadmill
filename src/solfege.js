@@ -37,8 +37,6 @@ class Scale {
 			}
 			let b = this.notes.indexOf(this.base);
 			this.notes = this.notes.slice(b).concat(this.notes.slice(0, b));
-		} else {
-			// C Major
 		}
 		this.notes = this.notes.slice(mode-1).concat(this.notes.slice(0, mode-1));
 	}
