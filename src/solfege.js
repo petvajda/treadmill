@@ -20,6 +20,9 @@ const sharpNotes = CMajScale.map(x =>
 
 class Scale {
   constructor(base, mode) {
+		if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
+			throw new Error("Mode not supported " + mode);
+		}
 		this.base  = base;
 		this.roman = NAMES_MODES[mode-1][0];
   	this.name  = NAMES_MODES[mode-1][1];
@@ -33,7 +36,10 @@ class Scale {
 			var start = sharpKeys.indexOf(this.base);
 			var mod = "#";
 			var modNotes = sharpNotes;
+		} else if (!(CMajScale.indexOf(this.base)>=0)) {
+			throw new Error("Base note not supported " + base);
 		}
+
 		if (typeof mod != 'undefined') {
 			for (var i=0; i<=start; i++) {
 				let noteIndex = this.notes.indexOf(modNotes[i]);
