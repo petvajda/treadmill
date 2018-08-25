@@ -22,23 +22,24 @@ class Scale {
 		this.notes = CMajScale.slice();
 
 		if (flatKeys.indexOf(this.base)>=0) {
-			let start = flatKeys.indexOf(this.base);
-			for (var i=0; i<=start; i++) {
-				let noteIndex = this.notes.indexOf(flatNotes[i]);
-				this.notes[noteIndex] = this.notes[noteIndex] + "b";
-			}
-			let b = this.notes.indexOf(this.base);
-			this.notes = this.notes.slice(b).concat(this.notes.slice(0, b));
+			var start = flatKeys.indexOf(this.base);
+			var mod = "b";
+			var modNotes = flatNotes;
 		} else if (sharpKeys.indexOf(this.base)>=0) {
-			let start = sharpKeys.indexOf(this.base);
+			var start = sharpKeys.indexOf(this.base);
+			var mod = "#";
+			var modNotes = sharpNotes;
+		}
+		if (typeof mod != 'undefined') {
 			for (var i=0; i<=start; i++) {
-				let noteIndex = this.notes.indexOf(sharpNotes[i]);
-				this.notes[noteIndex] = this.notes[noteIndex] + "#";
+				let noteIndex = this.notes.indexOf(modNotes[i]);
+				this.notes[noteIndex] = this.notes[noteIndex] + mod;
 			}
 			let b = this.notes.indexOf(this.base);
 			this.notes = this.notes.slice(b).concat(this.notes.slice(0, b));
 		}
 		this.notes = this.notes.slice(mode-1).concat(this.notes.slice(0, mode-1));
+
 	}
 }
 
