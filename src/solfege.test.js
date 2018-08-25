@@ -26,31 +26,51 @@ test('C Major scale notes', () => {
 });
 
 test('D Dorian scale notes', () => {
-  let cmaj = new Scale("C", 2);
-  expect(cmaj.notes).toEqual(["D", "E", "F", "G", "A", "B", "C"]);
+  let ddor = new Scale("C", 2);
+  expect(ddor.notes).toEqual(["D", "E", "F", "G", "A", "B", "C"]);
 });
 
 test('E Phrygian scale notes', () => {
-  let cmaj = new Scale("C", 3);
-  expect(cmaj.notes).toEqual(["E", "F", "G", "A", "B", "C", "D"]);
+  let ephr = new Scale("C", 3);
+  expect(ephr.notes).toEqual(["E", "F", "G", "A", "B", "C", "D"]);
 });
 
 test('F Lydian scale notes', () => {
-  let cmaj = new Scale("C", 4);
-  expect(cmaj.notes).toEqual(["F", "G", "A", "B", "C", "D", "E"]);
+  let flyd = new Scale("C", 4);
+  expect(flyd.notes).toEqual(["F", "G", "A", "B", "C", "D", "E"]);
 });
 
 test('G Mixolydian scale notes', () => {
-  let cmaj = new Scale("C", 5);
-  expect(cmaj.notes).toEqual(["G", "A", "B", "C", "D", "E", "F"]);
+  let gmix = new Scale("C", 5);
+  expect(gmix.notes).toEqual(["G", "A", "B", "C", "D", "E", "F"]);
 });
 
 test('A Aeolian scale notes', () => {
-  let cmaj = new Scale("C", 6);
-  expect(cmaj.notes).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
+  let aaeo = new Scale("C", 6);
+  expect(aaeo.notes).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
 });
 
 test('B Locrian scale notes', () => {
-  let cmaj = new Scale("C", 7);
-  expect(cmaj.notes).toEqual(["B", "C", "D", "E", "F", "G", "A"]);
+  let bloc = new Scale("C", 7);
+  expect(bloc.notes).toEqual(["B", "C", "D", "E", "F", "G", "A"]);
+});
+
+test('F Major scale notes', () => {
+  let fmaj = new Scale("F", 1);
+  expect(fmaj.notes).toEqual(["F", "G", "A", "Bb", "C", "D", "E"]);
+});
+
+test('Bb Major scale notes', () => {
+  let bbmaj = new Scale("Bb", 1);
+  expect(bbmaj.notes).toEqual(["Bb", "C", "D", "Eb", "F", "G", "A"]);
+});
+
+test('G Major scale notes', () => {
+  let gmaj = new Scale("G", 1);
+  expect(gmaj.notes).toEqual(["G", "A", "B", "C", "D", "E", "F#"]);
+});
+
+test('D Major scale notes', () => {
+  let dmaj = new Scale("D", 1);
+  expect(dmaj.notes).toEqual(["D", "E", "F#", "G", "A", "B", "C#"]);
 });
