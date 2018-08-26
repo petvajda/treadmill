@@ -10,10 +10,10 @@ The project also includes a basic Solfège JavaScript library:
 ```
 > cdor = new Scale("Bb", 2)
 Scale {
-  base: 'Bb',
-  roman: 'II',
-  name: 'Dorian',
-  notes: [ 'C', 'D', 'Eb', 'F', 'G', 'A', 'Bb' ] }
+  majorBase: 'Bb',
+  mode: 'II',
+  notes: [ 'C', 'D', 'Eb', 'F', 'G', 'A', 'Bb' ],
+  name: 'C Dorian' }
 >
 ```
 
