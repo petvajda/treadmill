@@ -2,22 +2,27 @@ const Scale = require('./solfege.js');
 
 test('C Major 1st degree scale name to equal Ionian', () => {
   let cmaj = new Scale("C", 1);
-  expect(cmaj.name).toBe("Ionian");
+  expect(cmaj.name).toBe("C Ionian");
 });
 
 test('C Major 1st degree scale roman name to equal I', () => {
   var cmaj = new Scale("C", 1);
-  expect(cmaj.roman).toBe("I");
+  expect(cmaj.mode).toBe("I");
+});
+
+test('C Major 2nd degree scale name to equal Dorian', () => {
+  var ddor = new Scale("C", 2);
+  expect(ddor.name).toBe("D Dorian");
 });
 
 test('C Major 7th degree scale name to equal Locrian', () => {
-  var hloc = new Scale("B", 7);
-  expect(hloc.name).toBe("Locrian");
+  var bloc = new Scale("C", 7);
+  expect(bloc.name).toBe("B Locrian");
 });
 
 test('C Major 7th degree scale roman name to equal VII', () => {
-  var hloc = new Scale("B", 7);
-  expect(hloc.roman).toBe("VII");
+  var bloc = new Scale("C", 7);
+  expect(bloc.mode).toBe("VII");
 });
 
 test('Not supported mode high', () => {
