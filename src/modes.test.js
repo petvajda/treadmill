@@ -45,9 +45,29 @@ test('F Lydian scale notes', () => {
   expect(flyd.notes).toEqual(["F", "G", "A", "B", "C", "D", "E"]);
 });
 
+test('C Lydian scale notes', () => {
+  let clyd = new Scale("G", 4);
+  expect(clyd.notes).toEqual(["C", "D", "E", "F#", "G", "A", "B"]);
+});
+
+test('Eb Lydian scale notes', () => {
+  let eblyd = new Scale("Bb", 4);
+  expect(eblyd.notes).toEqual(["Eb", "F", "G", "A", "Bb", "C", "D"]);
+});
+
 test('G Mixolydian scale notes', () => {
   let gmix = new Scale("C", 5);
   expect(gmix.notes).toEqual(["G", "A", "B", "C", "D", "E", "F"]);
+});
+
+test('Db Mixolydian scale notes', () => {
+  let dbmix = new Scale("Gb", 5);
+  expect(dbmix.notes).toEqual(["Db", "Eb", "F", "Gb", "Ab", "Bb", "Cb"]);
+});
+
+test('H Mixolydian scale notes', () => {
+  let hmix = new Scale("E", 5);
+  expect(hmix.notes).toEqual(["B", "C#", "D#", "E", "F#", "G#", "A"]);
 });
 
 test('A Aeolian scale notes', () => {
@@ -55,7 +75,17 @@ test('A Aeolian scale notes', () => {
   expect(aaeo.notes).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
 });
 
+test('D# Aeolian scale notes', () => {
+  let dsaeo = new Scale("F#", 6);
+  expect(dsaeo.notes).toEqual(["D#", "E#", "F#", "G#", "A#", "B", "C#"]);
+});
+
 test('B Locrian scale notes', () => {
   let bloc = new Scale("C", 7);
   expect(bloc.notes).toEqual(["B", "C", "D", "E", "F", "G", "A"]);
+});
+
+test('Bb Locrian scale notes', () => {
+  let bbloc = new Scale("Cb", 7);
+  expect(bbloc.notes).toEqual(["Bb", "Cb", "Db", "Eb", "Fb", "Gb", "Ab"]);
 });

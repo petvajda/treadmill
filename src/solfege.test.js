@@ -43,8 +43,20 @@ test('Not supported mode not integer', () => {
   }).toThrowError("Mode not supported 1.5");
 });
 
-test('Not supported base note', () => {
+test('Not supported base note H', () => {
   expect(() => {
     e = new Scale("H", 1)
-  }).toThrowError("Base note not supported H");
+  }).toThrowError("majorBase note not supported H");
+});
+
+test('Not supported base note Fb', () => {
+  expect(() => {
+    e = new Scale("Fb", 1)
+  }).toThrowError("majorBase note not supported Fb");
+});
+
+test('Not supported base note A#', () => {
+  expect(() => {
+    e = new Scale("A#", 1)
+  }).toThrowError("majorBase note not supported A#");
 });
