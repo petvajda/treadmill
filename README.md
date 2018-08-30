@@ -8,9 +8,10 @@ note positions on bass guitar. You may use it during your treadmill routine.
 The project also includes a basic Solfège JavaScript library:
 
 ```
-> cdor = new Scale("Bb", 2)
-Scale {
-  majorBase: 'Bb',
+> const solfege=require('./solfege.js');
+undefined
+> cdor = new solfege.Scale("Bb", 2)
+{ majorBase: 'Bb',
   mode: 'II',
   notes: [ 'C', 'D', 'Eb', 'F', 'G', 'A', 'Bb' ],
   name: 'C Dorian' }
