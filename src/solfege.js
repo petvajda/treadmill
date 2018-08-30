@@ -50,6 +50,9 @@ exports.Scale = class {
 		this.notes = this.notes.slice(mode-1).concat(this.notes.slice(0, mode-1));
 		this.name  = this.notes[0] + " " + NAMES_MODES[mode-1][1];
 	}
+	toString() {
+		return this.name + ': ' + this.notes.join(' ');
+	}
 };
 
 exports.flatNotes  = flatNotes;

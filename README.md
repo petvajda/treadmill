@@ -16,6 +16,8 @@ undefined
   notes: [ 'C', 'D', 'Eb', 'F', 'G', 'A', 'Bb' ],
   name: 'C Dorian' }
 >
+> cdor.toString()
+'C Dorian: C D Eb F G A Bb'
 ```
 
 # Original email from Ant the idea for the Application
