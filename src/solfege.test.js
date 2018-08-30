@@ -74,7 +74,7 @@ test('Not supported base note A#', () => {
   }).toThrowError("majorBase note not supported A#");
 });
 
-test('C Major scale toSring', () => {
-  let cmaj = new solfege.Scale("C", 1);
-  expect(cmaj.toString()).toBe("C Dorian: C D E F G A B");
+test('C Dorian scale toSring', () => {
+  let cmaj = new solfege.Scale("Bb", 2);
+  expect(cmaj.toString()).toBe("C Dorian: C D Eb F G A Bb");
 });
