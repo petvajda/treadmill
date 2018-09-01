@@ -78,3 +78,9 @@ test('C Dorian scale toSring', () => {
   let cmaj = new solfege.Scale("Bb", 2);
   expect(cmaj.toString()).toBe("C Dorian: C D Eb F G A Bb");
 });
+
+test('randomKey() returns a new possible key', () => {
+  let allKeys = solfege.flatKeys.concat(solfege.sharpKeys).concat("C");
+  let r = solfege.randomKey();
+  expect(allKeys.indexOf(r)).not.toBe(-1);
+});

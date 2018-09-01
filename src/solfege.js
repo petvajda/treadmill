@@ -57,3 +57,10 @@ exports.Scale = class {
 
 exports.flatNotes  = flatNotes;
 exports.sharpNotes = sharpNotes;
+exports.flatKeys 	 = flatKeys;
+exports.sharpKeys  = sharpKeys;
+exports.randomKey = () => {
+	let allKeys = flatKeys.concat(sharpKeys).concat("C");
+	const i = Math.floor(Math.random() * Math.floor(allKeys.length));
+	return allKeys[i];
+};
