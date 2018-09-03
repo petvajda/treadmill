@@ -70,8 +70,7 @@ exports.randomModesSequence = () => {
 	let sequence = [];
 	let start = Math.floor(Math.random() * Math.floor(7));
 	for (var i = 1; i < 8 ; i++ ){
-		start = (start + 2)%7;
-		sequence[start]=i;
+		sequence[start] = i;
 		start = (start + 2)%7;
 	}
 	return sequence;
