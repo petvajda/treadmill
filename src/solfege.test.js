@@ -84,3 +84,11 @@ test('randomKey() returns a new possible key', () => {
   let r = solfege.randomKey();
   expect(allKeys.indexOf(r)).not.toBe(-1);
 });
+
+test('randomModesSequence() returns a new sequence', () => {
+  let sequence = solfege.randomModesSequence();
+  expect(sequence.length).toEqual(7);
+  for (var i = 0; i < 6 ; i++ ){
+    expect(Math.abs(sequence[i+1]-sequence[i])).toBeGreaterThan(1);
+  }
+});
