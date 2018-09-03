@@ -20,6 +20,14 @@ undefined
 'C Dorian: C D Eb F G A Bb'
 ```
 
+Also random key and sequence generation:
+```
+> solfege.randomKey();
+'Cb'
+> solfege.randomModesSequence();
+[ 2, 4, 6, 1, 3, 5, 7 ]
+```
+
 # Original email from Ant the idea for the Application
 
 ```
