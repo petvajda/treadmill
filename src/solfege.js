@@ -18,6 +18,11 @@ const sharpKeys  = ["G",  "D",  "A",  "E",  "B",  "F#", "C#"];
 const sharpNotes = CMajScale.map(x =>
 					CMajScale[(3+(4*CMajScale.indexOf(x)))%(CMajScale.length)]);
 
+exports.flatNotes  = flatNotes;
+exports.sharpNotes = sharpNotes;
+exports.flatKeys   = flatKeys;
+exports.sharpKeys  = sharpKeys;
+
 exports.Scale = class {
   constructor(majorBase, mode) {
 		if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
@@ -56,10 +61,6 @@ exports.Scale = class {
 	}
 };
 
-exports.flatNotes  = flatNotes;
-exports.sharpNotes = sharpNotes;
-exports.flatKeys 	 = flatKeys;
-exports.sharpKeys  = sharpKeys;
 exports.randomKey = () => {
 	let allKeys = flatKeys.concat(sharpKeys).concat("C");
 	const i = Math.floor(Math.random() * Math.floor(allKeys.length));
