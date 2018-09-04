@@ -13,10 +13,10 @@ const NAMES_MODES = [
 const CMajScale  = ["C",  "D",  "E",  "F",  "G",  "A",  "B" ];
 const flatKeys   = ["F",  "Bb", "Eb", "Ab", "Db", "Gb", "Cb"];
 const flatNotes  = CMajScale.map(x =>
-									 CMajScale[(6+(3*CMajScale.indexOf(x)))%(CMajScale.length)]);
+					CMajScale[(6+(3*CMajScale.indexOf(x)))%(CMajScale.length)]);
 const sharpKeys  = ["G",  "D",  "A",  "E",  "B",  "F#", "C#"];
 const sharpNotes = CMajScale.map(x =>
-									 CMajScale[(3+(4*CMajScale.indexOf(x)))%(CMajScale.length)]);
+					CMajScale[(3+(4*CMajScale.indexOf(x)))%(CMajScale.length)]);
 
 exports.Scale = class {
   constructor(majorBase, mode) {
@@ -47,7 +47,8 @@ exports.Scale = class {
 			let b = this.notes.indexOf(this.majorBase);
 			this.notes = this.notes.slice(b).concat(this.notes.slice(0, b));
 		}
-		this.notes = this.notes.slice(mode-1).concat(this.notes.slice(0, mode-1));
+		this.notes = this.notes.slice(mode-1).
+			concat(this.notes.slice(0, mode-1));
 		this.name  = this.notes[0] + " " + NAMES_MODES[mode-1][1];
 	}
 	toString() {
