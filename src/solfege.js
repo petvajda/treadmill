@@ -1,6 +1,6 @@
 var exports = module.exports = {};
 
-const NAMES_MODES = [
+const MODE_NAMES = [
 	["I",   "Ionian"],
 	["II",  "Dorian"],
 	["III", "Phrygian"],
@@ -29,7 +29,7 @@ exports.Scale = class {
 			throw new Error("Mode not supported " + mode);
 		}
 		this.majorBase  = majorBase;
-		this.mode  = NAMES_MODES[mode-1][0];
+		this.mode  = MODE_NAMES[mode-1][0];
 		this.notes = CMajScale.slice();
 
 		if (flatKeys.indexOf(this.majorBase)>=0) {
@@ -54,7 +54,7 @@ exports.Scale = class {
 		}
 		this.notes = this.notes.slice(mode-1).
 			concat(this.notes.slice(0, mode-1));
-		this.name  = this.notes[0] + " " + NAMES_MODES[mode-1][1];
+		this.name  = this.notes[0] + " " + MODE_NAMES[mode-1][1];
 	}
 	toString() {
 		return this.name + ': ' + this.notes.join(' ');
