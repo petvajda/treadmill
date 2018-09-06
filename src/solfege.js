@@ -81,9 +81,9 @@ exports.Chord = class extends SolfegeBase {
 		super(majorBase, mode);
 		this.mode  = CHORD_NAMES[mode-1][0];
 		this.notes = [];
-		let baseSale = new exports.Scale(majorBase, 1);
+		let baseScale = new exports.Scale(majorBase, 1);
 		for (var i = 0; i < 4 ; i++ ){
-			this.notes[i] = baseSale.notes[(mode-1+i*2)%7];
+			this.notes[i] = baseScale.notes[(mode-1+i*2)%7];
 		}
 		this.name = this.notes[0]+CHORD_NAMES[mode-1][1];
 	}
