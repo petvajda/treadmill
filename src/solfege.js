@@ -10,6 +10,16 @@ const MODE_NAMES = [
 	["VII", "Locrian"]
 ];
 
+const CHORD_NAMES = [
+	["I",   "maj7"],
+	["II",  "m7"],
+	["III", "m7"],
+	["IV",  "maj7"],
+	["V",   "7"],
+	["VI",  "m7"],
+	["VII", "m7b5"]
+];
+
 const CMajScale  = ["C",  "D",  "E",  "F",  "G",  "A",  "B" ];
 const flatKeys   = ["F",  "Bb", "Eb", "Ab", "Db", "Gb", "Cb"];
 const flatNotes  = CMajScale.map(x =>
@@ -58,6 +68,22 @@ exports.Scale = class {
 	}
 	toString() {
 		return this.name + ': ' + this.notes.join(' ');
+	}
+};
+
+exports.Chord = class {
+  constructor(majorBase, mode) {
+		if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
+			throw new Error("Mode not supported " + mode);
+		}
+		this.majorBase  = majorBase;
+		this.mode  = CHORD_NAMES[mode-1][0];
+		this.notes = [];
+		let baseSale = new exports.Scale(majorBase, 1);
+		for (var i = 0; i < 4 ; i++ ){
+			this.notes[i] = baseSale.notes[(mode-1+i*2)%7];
+		}
+		
 	}
 };
 
