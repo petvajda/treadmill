@@ -41,3 +41,74 @@ test('Hm7b5 chord notes', () => {
   expect(hm7b5.notes).toEqual(["B", "D", "F", "A"]);
   expect(hm7b5.name).toEqual("Bm7b5");
 });
+
+test('Dmaj7 chord notes', () => {
+  let dmaj7 = new solfege.Chord("D", 1);
+  expect(dmaj7.notes).toEqual(["D", "F#", "A", "C#"]);
+  expect(dmaj7.name).toEqual("Dmaj7");
+});
+
+test('Bbmaj7 chord notes', () => {
+  let bbmaj7 = new solfege.Chord("Bb", 1);
+  expect(bbmaj7.notes).toEqual(["Bb", "D", "F", "A"]);
+  expect(bbmaj7.name).toEqual("Bbmaj7");
+});
+
+test('Ebm7 chord notes', () => {
+  let ebm7 = new solfege.Chord("Db", 2);
+  expect(ebm7.notes).toEqual(["Eb", "Gb", "Bb", "Db"]);
+  expect(ebm7.name).toEqual("Ebm7");
+});
+
+test('Ebm7 chord notes from another major key', () => {
+  let ebm7 = new solfege.Chord("Cb", 3);
+  expect(ebm7.notes).toEqual(["Eb", "Gb", "Bb", "Db"]);
+  expect(ebm7.name).toEqual("Ebm7");
+});
+
+test('Ebm7 chord notes from yet an another major key', () => {
+  let ebm7 = new solfege.Chord("Gb", 6);
+  expect(ebm7.notes).toEqual(["Eb", "Gb", "Bb", "Db"]);
+  expect(ebm7.name).toEqual("Ebm7");
+});
+
+test('Not supported mode high', () => {
+  expect(() => {
+    e = new solfege.Chord("C", 8)
+  }).toThrowError("Mode not supported 8");
+});
+
+test('Not supported mode low', () => {
+  expect(() => {
+    e = new solfege.Chord("C", 0)
+  }).toThrowError("Mode not supported 0");
+});
+
+test('Not supported mode not integer', () => {
+  expect(() => {
+    e = new solfege.Chord("C", 1.5)
+  }).toThrowError("Mode not supported 1.5");
+});
+
+test('Not supported base note H', () => {
+  expect(() => {
+    e = new solfege.Chord("H", 1)
+  }).toThrowError("majorBase note not supported H");
+});
+
+test('Not supported base note Fb', () => {
+  expect(() => {
+    e = new solfege.Chord("Fb", 1)
+  }).toThrowError("majorBase note not supported Fb");
+});
+
+test('Not supported base note A#', () => {
+  expect(() => {
+    e = new solfege.Chord("A#", 1)
+  }).toThrowError("majorBase note not supported A#");
+});
+
+test('F#maj7 chord toSring', () => {
+  let fsmaj7 = new solfege.Chord("F#", 1);
+  expect(fsmaj7.toString()).toBe("F#maj7: F# A# C# E#");
+});

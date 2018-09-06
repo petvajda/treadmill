@@ -33,15 +33,23 @@ exports.sharpNotes = sharpNotes;
 exports.flatKeys   = flatKeys;
 exports.sharpKeys  = sharpKeys;
 
-exports.Scale = class {
-  constructor(majorBase, mode) {
-		if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
-			throw new Error("Mode not supported " + mode);
-		}
-		this.majorBase = majorBase;
+SolfegeBase = class {
+	constructor(majorBase, mode) {
+	if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
+		throw new Error("Mode not supported " + mode);
+	}
+	this.majorBase = majorBase;
+	}
+	toString() {
+		return this.name + ': ' + this.notes.join(' ');
+	}
+};
+
+exports.Scale = class extends SolfegeBase {
+ 	constructor(majorBase, mode) {
+  		super(majorBase, mode);
 		this.mode  = MODE_NAMES[mode-1][0];
 		this.notes = CMajScale.slice();
-
 		if (flatKeys.indexOf(this.majorBase)>=0) {
 			var start = flatKeys.indexOf(this.majorBase);
 			var mod = "b";
@@ -66,17 +74,11 @@ exports.Scale = class {
 			concat(this.notes.slice(0, mode-1));
 		this.name  = this.notes[0] + " " + MODE_NAMES[mode-1][1];
 	}
-	toString() {
-		return this.name + ': ' + this.notes.join(' ');
-	}
 };
 
-exports.Chord = class {
-  constructor(majorBase, mode) {
-		if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
-			throw new Error("Mode not supported " + mode);
-		}
-		this.majorBase = majorBase;
+exports.Chord = class extends SolfegeBase {
+	constructor(majorBase, mode) {
+		super(majorBase, mode);
 		this.mode  = CHORD_NAMES[mode-1][0];
 		this.notes = [];
 		let baseSale = new exports.Scale(majorBase, 1);
@@ -84,9 +86,6 @@ exports.Chord = class {
 			this.notes[i] = baseSale.notes[(mode-1+i*2)%7];
 		}
 		this.name = this.notes[0]+CHORD_NAMES[mode-1][1];
-	}
-	toString() {
-		return this.name + ': ' + this.notes.join(' ');
 	}
 };
 
