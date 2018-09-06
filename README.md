@@ -7,6 +7,7 @@ note positions on bass guitar. You may use it during your treadmill routine.
 
 The project also includes a basic Solfège JavaScript library:
 
+Scale and modes support:
 ```
 > const solfege=require('./solfege.js');
 undefined
@@ -15,16 +16,27 @@ undefined
   mode: 'II',
   notes: [ 'C', 'D', 'Eb', 'F', 'G', 'A', 'Bb' ],
   name: 'C Dorian' }
->
 > cdor.toString()
 'C Dorian: C D Eb F G A Bb'
 ```
 
+Chord support:
+```
+> ebm7 = new solfege.Chord("Db", 2);
+SolfegeBase {
+  majorBase: 'Db',
+  mode: 'II',
+  notes: [ 'Eb', 'Gb', 'Bb', 'Db' ],
+  name: 'Ebm7' }
+> ebm7.toString()
+'Ebm7: Eb Gb Bb Db'
+```
+
 Also random key and sequence generation:
 ```
-> solfege.randomKey();
+> solfege.randomKey()
 'Cb'
-> solfege.randomModesSequence();
+> solfege.randomModesSequence()
 [ 2, 4, 6, 1, 3, 5, 7 ]
 ```
 
