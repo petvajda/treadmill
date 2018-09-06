@@ -38,7 +38,7 @@ exports.Scale = class {
 		if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
 			throw new Error("Mode not supported " + mode);
 		}
-		this.majorBase  = majorBase;
+		this.majorBase = majorBase;
 		this.mode  = MODE_NAMES[mode-1][0];
 		this.notes = CMajScale.slice();
 
@@ -76,7 +76,7 @@ exports.Chord = class {
 		if (mode <= 0 || mode > 7 || !Number.isInteger(mode)) {
 			throw new Error("Mode not supported " + mode);
 		}
-		this.majorBase  = majorBase;
+		this.majorBase = majorBase;
 		this.mode  = CHORD_NAMES[mode-1][0];
 		this.notes = [];
 		let baseSale = new exports.Scale(majorBase, 1);
@@ -88,7 +88,6 @@ exports.Chord = class {
 	toString() {
 		return this.name + ': ' + this.notes.join(' ');
 	}
-
 };
 
 exports.randomKey = () => {
