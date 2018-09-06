@@ -83,8 +83,12 @@ exports.Chord = class {
 		for (var i = 0; i < 4 ; i++ ){
 			this.notes[i] = baseSale.notes[(mode-1+i*2)%7];
 		}
-		
+		this.name = this.notes[0]+CHORD_NAMES[mode-1][1];
 	}
+	toString() {
+		return this.name + ': ' + this.notes.join(' ');
+	}
+
 };
 
 exports.randomKey = () => {
