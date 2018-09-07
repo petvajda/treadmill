@@ -40,7 +40,7 @@ Also random key and sequence generation:
 [ 2, 4, 6, 1, 3, 5, 7 ]
 ```
 
-# Original email from Ant the idea for the Application
+## Original email from Ant the idea for the Application
 
 ```
 Treadmill routine:
@@ -63,4 +63,5 @@ These are the things that you’re saying and in this order.
 
 5.      The pentatonic name and its notes
 ```
+## Screenshot of the react App
 ![TreadmillApp Picture](https://github.com/petvajda/treadmill/blob/master/TreadmillApp.png)
