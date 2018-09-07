@@ -63,3 +63,4 @@ These are the things that you’re saying and in this order.
 
 5.      The pentatonic name and its notes
 ```
+![TreadmillApp Picture](https://github.com/petvajda/treadmill/blob/master/TreadmillApp.png)
