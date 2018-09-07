@@ -1,6 +1,6 @@
 import solfege from './solfege';
 import React from 'react';
-import { Alert, Button, StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 const ExerciseText = (props) => {
   return (
@@ -49,18 +49,13 @@ export default class App extends React.Component {
         <View>
           <Text style={styles.header}>Threadmill App For Music Learning</Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <ExerciseText keyname={keyname}
-                      sequence={sequence} />
-        </View>
-        <ExerciseSteps />
-        <View style={styles.buttonContainer}>
-          <Button
-            onPress={this.help}
-            title="Help Me"
-            color="#000000"
-          />
-        </View>
+        <TouchableHighlight onPress={this.help} underlayColor="white">
+          <View style={styles.buttonContainer}>
+            <ExerciseText keyname={keyname}
+                          sequence={sequence} />
+            <ExerciseSteps />
+          </View>
+        </TouchableHighlight>
         <View style={styles.buttonContainer}>
           <Button
             onPress={this.resetGame}
@@ -88,24 +83,24 @@ const styles = StyleSheet.create({
   },
   normal: {
     color: '#000000',
-    fontSize: 18,
-    paddingBottom: 12,
+    fontSize: 16,
+    padding: 4,
     textAlign: 'center',
   },
   keyname: {
     color: '#000000',
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: 26,
     textAlign: 'center',
   },
   sequence: {
     color: '#000000',
     fontWeight: 'bold',
-    fontSize: 22,
+    fontSize: 20,
     textAlign: 'center',
   },
   buttonContainer: {
-    margin: 8,
+    padding: 10,
     backgroundColor:'#5eb8ff',
     borderRadius:10,
     width: '80%',
