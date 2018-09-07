@@ -3,10 +3,14 @@ import React from 'react';
 import { Alert, Button, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 const ExerciseText = (props) => {
+  let solution = new solfege.Scale(props.keyname, 1);
   return (
     <View>
       <Text style={styles.keyname}>{props.keyname}</Text>
       <Text style={styles.sequence}>{props.sequence}</Text>
+      <Text style={styles.solution}>
+        {props.showSolution ? solution.notes.join(' '):' '}
+      </Text>
     </View>
   );
 };
@@ -27,21 +31,24 @@ const ExerciseSteps = (props) => {
 export default class App extends React.Component {
 
   static initialState = () => ({
-    sequence: solfege.randomModesSequence().join(' '),
-    keyname:  solfege.randomKey(),
+    sequence:     solfege.randomModesSequence().join(' '),
+    keyname:      solfege.randomKey(),
+    showSolution: false,
   });
 
   state = App.initialState();
   resetGame = () => this.setState(App.initialState());
   help = () => {
-    let s = new solfege.Scale(this.state.keyname, 1);
-    Alert.alert(s.notes.join(' '));
+    this.setState(prevState => ({
+    	showSolution: !prevState.showSolution,
+  	}));
   };
 
   render() {
     const {
       sequence,
       keyname,
+      showSolution,
     } = this.state;
 
     return (
@@ -52,7 +59,8 @@ export default class App extends React.Component {
         <TouchableHighlight onPress={this.help} underlayColor="white">
           <View style={styles.buttonContainer}>
             <ExerciseText keyname={keyname}
-                          sequence={sequence} />
+                          sequence={sequence}
+                          showSolution={showSolution} />
             <ExerciseSteps />
           </View>
         </TouchableHighlight>
@@ -81,12 +89,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingTop: 18,
   },
-  normal: {
-    color: '#000000',
-    fontSize: 16,
-    padding: 4,
-    textAlign: 'center',
-  },
   keyname: {
     color: '#000000',
     fontWeight: 'bold',
@@ -97,6 +99,18 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontWeight: 'bold',
     fontSize: 20,
+    textAlign: 'center',
+  },
+  solution: {
+    color: '#d4e157',
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'center',
+  },
+  normal: {
+    color: '#000000',
+    fontSize: 16,
+    padding: 4,
     textAlign: 'center',
   },
   buttonContainer: {
