@@ -47,9 +47,7 @@ class App extends React.Component {
   };
 
   help = () => {
-    this.setState(prevState => ({
-    	showSolution: !prevState.showSolution,
-  	}));
+    this.toggle();
     this.props.setTimeout(this.toggle, 2000);
   };
 
