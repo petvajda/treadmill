@@ -56,7 +56,7 @@ export default class App extends React.Component {
         <View>
           <Text style={styles.header}>Threadmill App For Music Learning</Text>
         </View>
-        <TouchableHighlight onPress={this.help} underlayColor="white">
+        <TouchableHighlight onPress={this.help} underlayColor="#0288d1">
           <View style={styles.buttonContainer}>
             <ExerciseText keyname={keyname}
                           sequence={sequence}
