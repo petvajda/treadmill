@@ -1,6 +1,7 @@
 import solfege from './solfege';
 import React from 'react';
 import { Alert, Button, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import ReactTimeout from 'react-timeout'
 
 const ExerciseText = (props) => {
   let solution = new solfege.Scale(props.keyname, 1);
@@ -28,7 +29,7 @@ const ExerciseSteps = (props) => {
   );
 };
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   static initialState = () => ({
     sequence:     solfege.randomModesSequence().join(' '),
@@ -38,10 +39,18 @@ export default class App extends React.Component {
 
   state = App.initialState();
   resetGame = () => this.setState(App.initialState());
+
+  toggle = () => {
+    this.setState(prevState => ({
+      showSolution: !prevState.showSolution,
+    }));
+  };
+
   help = () => {
     this.setState(prevState => ({
     	showSolution: !prevState.showSolution,
   	}));
+    this.props.setTimeout(this.toggle, 2000);
   };
 
   render() {
@@ -75,6 +84,7 @@ export default class App extends React.Component {
     );
   }
 }
+export default ReactTimeout(App)
 
 const styles = StyleSheet.create({
   container: {
