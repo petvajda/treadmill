@@ -4,10 +4,9 @@ VF = Vex.Flow;
 const pattern = (noteValue=8) => {
   var notes = [];
   for (var i = 0; i < noteValue ; i++ ) {
+    noteString = noteValue.toString();
     if (Math.random() >= 0.5) {
-      noteString = noteValue.toString();
-    } else {
-      noteString = noteValue.toString()+ "r";
+      noteString = noteString + "r";
     }
     var note = new VF.StaveNote({keys: ["b/4"], duration: noteString });
     notes.push(note);
