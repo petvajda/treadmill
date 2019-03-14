@@ -25,8 +25,7 @@ function draw() {
 
     var offset = 0;
     for (var o = 0; o < numberOfOctaves; o++) {
-      console.log(o);
-
+      ctx.globalAlpha = 0.65;
       ctx.beginPath();
       for (var i = 0; i < numberOfSingleDots; i++) {
         ctx.arc(offset + 70.5 + i * 40, 55.5, 5, 0, Math.PI * 2, true);
